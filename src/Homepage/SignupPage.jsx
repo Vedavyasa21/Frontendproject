@@ -10,7 +10,7 @@ const SignupPage = () => {
   const handleSignup = (e) => {
     e.preventDefault()
     console.log('Signing up', name, email)
-    // After successful signup, navigate to home
+    
     navigate('/home')
   }
 

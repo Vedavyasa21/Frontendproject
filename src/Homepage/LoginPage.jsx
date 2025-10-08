@@ -10,7 +10,7 @@ const LoginPage = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Logging in with", email, password);
-    // After successful login, navigate to home
+    
     navigate('/home')
   };
 

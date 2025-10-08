@@ -1,9 +1,7 @@
 .home-hero {
   min-height: 100vh;
-  /* replace with a scenic hero image in public/hero.jpg for best results */
-  background-image: linear-gradient(rgba(10,20,30,0.25), rgba(10,20,30,0.25)), url('/vite.svg');
-  background-size: cover;
-  background-position: center;
+  
+  /* global background provided by src/index.css (tour.jpg + overlay) */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +14,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  /* subtle dark overlay to increase text contrast */
+ 
   background: rgba(10,14,20,0.32);
   pointer-events: none;
 }

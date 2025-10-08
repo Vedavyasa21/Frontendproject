@@ -1,4 +1,4 @@
-/* Reset some default styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +6,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Make sure the app fills the screen */
+
 html, body, #root {
   height: 100%;
   width: 100%;
 }
 
-/* Optional: smooth scrolling and clean look */
+
 body {
   background-color: #f0f2f5;
   color: #333;
@@ -20,7 +20,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Center content if needed */
+
 .App {
   display: flex;
   justify-content: center;
@@ -28,7 +28,6 @@ body {
   height: 100%;
 }
 
-/* Optional custom scrollbar for modern UI */
 ::-webkit-scrollbar {
   width: 8px;
 }
