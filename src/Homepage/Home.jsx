@@ -1,31 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
 const Home = () => {
+  const navigate = useNavigate()
+  const [destination, setDestination] = useState('')
+  const [checkin, setCheckin] = useState('')
+  const [travelers, setTravelers] = useState('')
+
+  const handleSearch = (e) => {
+    e && e.preventDefault()
+    const params = new URLSearchParams()
+    if (destination) params.set('q', destination)
+    if (checkin) params.set('checkin', checkin)
+    if (travelers) params.set('travelers', travelers)
+    navigate(`/explore?${params.toString()}`)
+  }
+
   return (
     <div className="home-hero">
-      <header className="home-header">
-        <div className="brand">HOME STAY CONNECT</div>
-        <nav className="top-nav">
-          <a href="#">Home</a>
-          <a href="#">Explore</a>
-          <a href="#">Bookings</a>
-          <a href="#">Contact</a>
-        </nav>
-        <div className="location">Current Location</div>
-      </header>
+      {/* Top navigation moved to global TopNav component */}
 
       <div className="hero-card">
         <h2>Find Your Perfect Homestay</h2>
         <p className="subtitle">Explore local insights and unique stays</p>
 
-        <div className="search-row">
-          <input className="search-input" placeholder="Where are you going" />
-          <input className="search-input" placeholder="Check-in  check-out" />
-          <input className="search-input" placeholder="Travelers" />
-        </div>
+        <form className="search-row" onSubmit={handleSearch}>
+          <input
+            className="search-input"
+            placeholder="Where are you going"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+          />
 
-        <button className="search-btn">Search</button>
+          <input
+            className="search-input"
+            placeholder="Check-in (YYYY-MM-DD)"
+            value={checkin}
+            onChange={(e) => setCheckin(e.target.value)}
+          />
+
+          <input
+            className="search-input"
+            placeholder="Travelers"
+            value={travelers}
+            onChange={(e) => setTravelers(e.target.value)}
+          />
+
+          <button className="search-btn" type="submit">Search</button>
+        </form>
       </div>
     </div>
   )
