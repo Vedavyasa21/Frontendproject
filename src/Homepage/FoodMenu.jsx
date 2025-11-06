@@ -78,7 +78,18 @@ export default function FoodMenu(){
           <h4>Your Order</h4>
           <div className="order-total">Total: <span>${total()}</span></div>
           <div style={{display:'flex', justifyContent:'center', marginTop:12}}>
-            <button className="proceed-food" onClick={()=>navigate(-1)}>proceed to final bookings</button>
+            <button
+              className="proceed-food"
+              onClick={() => {
+                try {
+                  const payload = { order, total: total(), ts: Date.now() }
+                  localStorage.setItem(`order:${id}:${roomId}`, JSON.stringify(payload))
+                } catch { /* ignore storage errors */ }
+                navigate(`/place/${id}/homestays/book/${roomId}/review${window.location.search}`)
+              }}
+            >
+              Proceed to Review
+            </button>
           </div>
         </div>
       </div>

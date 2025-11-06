@@ -24,7 +24,7 @@ export default function Dashboard() {
         </div>
 
         <div className="actions">
-          <button className="action-btn">Change password</button>
+          <Link to="/change-password" className="action-btn">Change password</Link>
           <Link to="/" className="action-btn logout">Logout</Link>
         </div>
       </div>

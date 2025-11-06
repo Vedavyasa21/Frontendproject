@@ -29,15 +29,19 @@ export default function Explore(){
       </div>
 
       <div className="explore-grid">
-        {filtered.map(c => (
+        {filtered.map(c => {
+          const fallback = 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60'
+          const img = c.image || fallback
+          return (
           <article key={c.id} className="card clickable" onClick={() => navigate(`/place/${c.id}`)}>
-            <div className="card-media" style={{backgroundImage:`url(${c.image})`}} />
+            <div className="card-media" style={{backgroundImage:`url(${img})`}} />
             <div className="card-body">
               <h3>{c.title}</h3>
               <p>{c.subtitle}</p>
             </div>
           </article>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

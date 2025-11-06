@@ -68,17 +68,17 @@ export default function Place(){
             View Home Stays
           </button>
         </h3>
-        <div style={{display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginTop:12}}>
-          {[
+        <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(160px, 1fr))', gap:16, marginTop:12}}>
+          {(place.gallery || [
             'https://images.unsplash.com/photo-1505691723518-36a4162b7b36?auto=format&fit=crop&w=800&q=60',
             'https://images.unsplash.com/photo-1560184897-6c6f7d3d0d8a?auto=format&fit=crop&w=800&q=60',
             'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=60',
             'https://images.unsplash.com/photo-1542317854-6e3b77f9b5c0?auto=format&fit=crop&w=800&q=60'
-          ].map((img, idx) => (
+          ]).map((img, idx) => (
             <div
               key={idx}
               onClick={() => navigate(`/place/${id}/homestays${window.location.search}`)}
-              style={{height:140, backgroundImage:`url(${img})`, backgroundSize:'cover', cursor:'pointer', borderRadius:8}}
+              style={{height:160, backgroundImage:`url(${img})`, backgroundSize:'cover', backgroundPosition:'center', cursor:'pointer', borderRadius:8}}
             />
           ))}
         </div>

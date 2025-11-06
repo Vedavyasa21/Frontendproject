@@ -12,6 +12,8 @@ import Booking from './Homepage/Booking'
 import FoodMenu from './Homepage/FoodMenu'
 import Dashboard from './Homepage/Dashboard'
 import Contact from './Homepage/Contact'
+import ReviewBooking from './Homepage/ReviewBooking'
+import ChangePassword from './Homepage/ChangePassword'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
   <Route path="/place/:id/homestays" element={<Homestays/>} />
   <Route path="/place/:id/homestays/book/:roomId" element={<Booking/>} />
   <Route path="/place/:id/homestays/book/:roomId/food" element={<FoodMenu/>} />
+  <Route path="/place/:id/homestays/book/:roomId/review" element={<ReviewBooking/>} />
+  <Route path="/change-password" element={<ChangePassword/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -32,12 +32,24 @@
 
 .location {
   margin-left: 1rem;
-  color: rgba(0,0,0,0.85);
   font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.8);
+  color: #0a2230;
+  white-space: nowrap;
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.location:disabled { opacity: 0.7; cursor: not-allowed; }
 
 /* Optional: ensure the header remains readable on light backgrounds too */
 @media (prefers-color-scheme: light) {
   .brand { color: #111; }
   .top-nav a { color: #111; }
+  .location { background: #e8eef3; color: #0a2230; }
 }

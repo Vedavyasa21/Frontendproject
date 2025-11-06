@@ -16,11 +16,6 @@ export default function Contact() {
 
   return (
     <div className="contact-root">
-      <div className="contact-topright">
-        <div>Email: support@homestayconnect.com</div>
-        <div>Phone: +1 (555) 123-4567</div>
-      </div>
-
       <div className="back-link">
         <Link to="/home">← Back to Home</Link>
       </div>

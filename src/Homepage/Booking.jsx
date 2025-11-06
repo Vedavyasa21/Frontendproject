@@ -46,7 +46,12 @@ export default function Booking(){
           </button>
 
           <div className="proceed-wrap">
-            <button className="proceed-btn" onClick={() => navigate(-1)}>proceed to final bookings</button>
+            <button
+              className="proceed-btn"
+              onClick={() => navigate(`/place/${id}/homestays/book/${room.id}/review${window.location.search}`)}
+            >
+              Proceed to Review
+            </button>
           </div>
 
           {(q || checkin || travelers) && (
